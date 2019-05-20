@@ -587,7 +587,7 @@
       "projectFolder": "libraries/package-deps-hash",
       "reviewCategory": "libraries",
       "shouldPublish": true
-   },
+    },
     {
       "packageName": "@microsoft/rushell",
       "projectFolder": "libraries/rushell",
@@ -598,7 +598,7 @@
       "packageName": "@microsoft/stream-collator",
       "projectFolder": "libraries/stream-collator",
       "reviewCategory": "libraries",
-     "shouldPublish": true
+      "shouldPublish": true
     },
     {
       "packageName": "@microsoft/ts-command-line",
@@ -620,7 +620,7 @@
     },
     {
       "packageName": "@microsoft/rush-stack-compiler-2.4",
-     "projectFolder": "stack/rush-stack-compiler-2.4",
+      "projectFolder": "stack/rush-stack-compiler-2.4",
       "reviewCategory": "libraries",
       "shouldPublish": true,
       "cyclicDependencyProjects": [
@@ -630,7 +630,7 @@
     },
     {
       "packageName": "@microsoft/rush-stack-compiler-2.7",
-     "projectFolder": "stack/rush-stack-compiler-2.7",
+      "projectFolder": "stack/rush-stack-compiler-2.7",
       "reviewCategory": "libraries",
       "shouldPublish": true,
       "cyclicDependencyProjects": [
