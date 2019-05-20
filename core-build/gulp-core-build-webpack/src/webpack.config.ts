@@ -1,10 +1,10 @@
 import * as Webpack from 'webpack';
+import * as TerserPlugin from 'terser-webpack-plugin';
 import { WebpackTask } from './WebpackTask';
 import * as path from 'path';
 
 // Note: this require may need to be fixed to point to the build that exports the gulp-core-build-webpack instance.
 const webpackTask: WebpackTask = require('@microsoft/web-library-build').webpack;
-const webpack: typeof Webpack = webpackTask.resources.webpack;
 
 const isProduction: boolean = webpackTask.buildConfig.production;
 
@@ -13,6 +13,7 @@ const packageJSON: { name: string } = require('./package.json');
 const webpackConfiguration: Webpack.Configuration = {
   context: __dirname,
   devtool: (isProduction) ? undefined : 'source-map',
+  mode: (isProduction) ? 'production' : 'development',
 
   entry: {
     [packageJSON.name]: path.join(__dirname, webpackTask.buildConfig.libFolder, 'index.js')
@@ -46,13 +47,19 @@ const webpackConfiguration: Webpack.Configuration = {
 };
 
 if (isProduction && webpackConfiguration.plugins) {
-  webpackConfiguration.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    mangle: true,
-    compress: {
-      dead_code: true,
-      warnings: false
-    }
-  }));
+  webpackConfiguration.optimization = {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            dead_code: false,
+            warnings: false
+          },
+          mangle: true
+        }
+      })
+    ]
+  };
 }
 
 exports = webpackConfiguration;
