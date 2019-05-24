@@ -64,18 +64,18 @@ export namespace RushConstants {
   export const rushVariantsFolderName: string = 'variants';
 
   /**
-   * The filename ("npm-shrinkwrap.json") used to store an installation plan for the NPM package manger.
+   * The filename ("npm-shrinkwrap.json") used to store an installation plan for the NPM package manager.
    */
   export const npmShrinkwrapFilename: string = 'npm-shrinkwrap.json';
 
   /**
-   * The filename ("shrinkwrap.yaml") used to store an installation plan for the PNPM package manger
+   * The filename ("shrinkwrap.yaml") used to store an installation plan for the PNPM package manager
    * (PNPM version 2.x and earlier).
    */
   export const pnpmV1ShrinkwrapFilename: string = 'shrinkwrap.yaml';
 
   /**
-   * The filename ("pnpm-lock.yaml") used to store an installation plan for the PNPM package manger
+   * The filename ("pnpm-lock.yaml") used to store an installation plan for the PNPM package manager
    * (PNPM version 3.x and later).
    */
   export const pnpmV3ShrinkwrapFilename: string = 'pnpm-lock.yaml';
@@ -86,7 +86,7 @@ export namespace RushConstants {
   export const pnpmfileFilename: string = 'pnpmfile.js';
 
   /**
-   * The filename ("shrinkwrap.yaml") used to store state for pnpm
+   * The filename ("yarn.lock") used to store state for the Yarn package manager
    */
   export const yarnShrinkwrapFilename: string = 'yarn.lock';
 
